@@ -1,7 +1,7 @@
 
 /*Ejercicio switch */
 
-var day =Number(prompt("Elige un numero:"));
+var day =Number(prompt("Elige un numero entre el 0 y el 6:"));
 var text;
 
 switch (day) {

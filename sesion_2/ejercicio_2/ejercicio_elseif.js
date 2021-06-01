@@ -1,5 +1,7 @@
-
 /*Ejercicio else if */
+
+var time = 13;
+var saludo;
 
 if (time >= 0 && time < 12) {
     saludo = "Buenos días";

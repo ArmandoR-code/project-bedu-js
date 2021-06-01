@@ -1,7 +1,7 @@
 
 /*Ejercicio if */
 
-var time =Number(prompt("Escribe la hora:"));
+var time =Number(prompt("¿Qué hora es?"));
 var saludo; 
 
  if (time < 12) {
