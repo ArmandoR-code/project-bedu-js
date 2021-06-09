@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expresión de Funciones</title>
+</head>
+<body>
+    <script>
+        // Expresión de funciones
+        // Ejemplo:
+        var whatAreYouDoing = function(activity, name) {
+            switch (activity) {
+                case 'watching tv':
+                    return name + ' get do some exercise you floppy';
+                case 'playing videogames':
+                    return name + ", your dummy ass'll fail that math exam";
+                default:
+                    return name + ', are you okey bro?';
+            }
+        }
+
+        console.log(whatAreYouDoing('watching tv', 'Bob'));
+        console.log(whatAreYouDoing('playing videogames', 'Phill'));
+        console.log(whatAreYouDoing('Crying', 'Robert'));
+    </script>
+</body>
+</html>

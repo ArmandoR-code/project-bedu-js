@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Más Funciones</title>
+    <script>
+        // Efectos secundarios
+        let car = {
+            brand: 'Toyota',
+            model: 'Cambri',
+            year: 2021
+        }
+
+        function addColor(car) {
+            car.color = 'Black'
+
+            return car
+        }
+        // car no tiene el objeto color
+        console.log('antes de la operacion', car)
+
+        let sameCar = addColor(car)
+        // Este es el efecto secundario
+        console.log('despues de llamar a addColor, car teien color', car)
+        console.log('despues de llamar a addColor sameCar, car teien color', car)
+
+        // Sin efecto secundario
+        let carro = {
+            marca: 'Nissan',
+            modelo: 'Sentra',
+            año: 2020
+        }
+
+        function color(carro) {
+            let carroNuevo = {...carro, color: 'Blanco'}
+            return carroNuevo
+        }
+        console.log('antes de la operacion', carro)
+        // Aquí no hay efecto secundario
+        let mismoCarro = color(carro)  
+        console.log('despues de lllamar a color carro no teine color', carro)
+        console.log('despues de llamar a color mismoCarro, carro ya tiene color', mismoCarro)      
+
+
+        // Funciones puras
+        function suma(a, b) {
+            return a + b;
+        }
+        console.log(suma(3, 2)) // La funcion es pura porque simepre tendran la misma salida con los mismos datos de entrada
+
+        // Funcon NO pura
+        function randomNUmber() {
+            return Math.floor(Math.random() * 10);
+        }
+
+        // Funciones de primera clase
+        // cuando la funcion puede ser tratada como cualquier otra variable
+        const suquare = function(number) {
+            return number * number
+        }
+        let seqareOffFour = suquare(4)
+        console.log(seqareOffFour)
+
+        // Funcion de alto orden
+        // Una funcion que recive otra funcion como parametro
+        // Ejemplo con map
+        let numbers = [1, 2, 3, 4, 5]
+
+        let double = numbers.map(function(number) {
+            return number * 2
+        })
+        console.log(numbers)
+        console.log(double)
+        
+        // Ejemplo de funciones de alto nivel con filter
+        let numbers2 = [1, 2, 3, 4, 5]
+        
+        let pair = numbers2.filter(function(number2) {
+            return number2 % 2 === 0
+        })
+        console.log(numbers2)
+        console.log(pair)
+
+        // Ejemplo de funciones de alto nivel con reduce
+        let numbers3 = [1, 2, 3, 4, 5]
+        
+        const sum = numbers3.reduce(function(acomulator, actualValue) {
+            return acomulator + actualValue
+        }, 0)
+        console.log(sum)
+
+        // .toString y .split
+        // Convertir una varialbe a string y luega a array(numero)
+        let num = 56789;
+
+        let array = num.toString().split('')
+
+        let numArray = array.map(Number) // Si se queire regresar lo mismo, se puede escribir Number
+
+        console.log(numArray)
+
+        let summ = numArray.reduce(function(acomulator, actualValue) {
+            return acomulator + actualValue
+        }, 0)
+
+        console.log(summ)
+
+
+        // Forma corta de lo anterior
+        function digitSum(numm) {
+            return numm
+                   .toString()
+                   .split('')
+                   .map(Number)
+                   .reduce(function(acc, actval) {
+                       return acc + actval
+                   },0)
+        }
+        console.log(digitSum(98765))
+        
+
+        // RETO
+        // Solucion con reduce
+        function flatten(numList) {
+            return numList.reduce(function(result, element) {
+                return result.concat(element)
+            }, [])
+        }
+        var numList = [[1, 2, 3], [4, 5], [6]];
+        var array2 = flatten(numList);
+        console.log(array2); // [1, 2, 3, 4, 5, 6]
+
+        // Solicuon con filter
+        function flatten1(list) {
+            return list.filter(function(otherList){
+                return otherList.concat(list)
+            }, [])
+        }
+        var list = [[1, 2, 3], [4, 5], [6]];
+        var a = flatten1(list);
+        console.log(a)
+        // Solucion con map
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

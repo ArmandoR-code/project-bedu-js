@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones: ejemplos y ejercicios</title>
+</head>
+<body>
+    <script>
+        // Calcula la edad mediante el año de nacimineto
+        function calcAge(birthYear) {
+            let age = 2020 - birthYear;
+            return age;
+        }
+        let userAge = calcAge(1995);
+        console.log(userAge);
+
+        // Calcula en cuentos años tendre 70 años de edad
+        function have70yo(year, name) {
+            let myage = calcAge(year);
+            console.log(myage);
+            let old = 70 - myage;
+            console.log(name + 'gonna have 70 years old in ' + old + ' years');
+            document.write(`<h1>${name} gonna have 70 years old in ${old} years</h1>`);
+        }
+        have70yo(1997, 'Yo merengues ');
+
+        // Pregunta el año de nacimiento y lo depliega en la web
+        function howOldRU(bYear){
+            var yourAge = 2020 - bYear;
+            document.write(`<h1>Tienes ${yourAge} años de edad</h1>`)
+        }
+        howOldRU(prompt('¿En que año naciste')) 
+        
+        var monthOfBirthday = function(month){
+            switch (month) {
+                case '1': 
+                    return 'Enero';
+                case '2': 
+                    return 'Febrero';
+                case '3': 
+                    return 'Marzo';
+                case '4': 
+                    return 'Abril';
+                case '5': 
+                    return 'Mayo';
+                case '6': 
+                    return 'Junio';
+                case '7': 
+                    return 'Julio';
+                case '8': 
+                    return 'Agosto';
+                case '9': 
+                    return 'Septiembre';
+                case '10': 
+                    return 'Octibre';
+                case '11': 
+                    return 'Noviembre';
+                case '12': 
+                    return 'Diciembre';
+                default: 
+                    return 'Eso no es un mes';
+            }
+        }
+        console.log(monthOfBirthday(prompt('¿En que mes naciste?')));
+
+        /* //Pregunta el año de naciemento y el mes y responde en la pantalla tu edad
+        let months = [
+            {1: 'Enero', 2:'Febrero', 3: 'Marzo', 4: 'Abril', 5: 'Mayo', 6: 'Junio', 7: 'Julio', 8: 'Agosto', 9: 'Septiembre', 10: 'Octubre', 11: 'Noviembre', 12: 'Diciembre'}
+        ]
+        function howOldRU(bYear,months) {
+            var yourAge = 2020 - bYear;
+                if(months[i] < 6) {
+                    return yourAge - 1
+            }else {
+                return yourAge
+            }
+        }
+        howOldRU(prompt(`¿En que año y month naciste? vg: 1995, 5`))
+        document.write(`<h1>Tienes ${yourAge} años de edad</h1>`) */
+    </script>
+</body>
+</html>

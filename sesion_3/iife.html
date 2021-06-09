@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IIFE</title>
+</head>
+<body>
+    <h1>Immediately Invoked Function Expression</h1>
+    <h2>Las expresiones de funciones ejecutadas inmediatamente o IIFE por sus siglas en inglés (Immediately Invoked Function Expression) son funciones que se ejecutan inmediatamente después de definirlas. Son útiles cuando queremos ejecutar una función una sola vez y no queremos que otras partes del programa puedan ejecutar dicha función accidentalmente.</h2>
+    <script>
+        // Supongamos que tenemos una funcion que muestra en consola una wea cualquiera
+        function whatEver(){
+            var wea = 'Wea cualquiera';
+            console.log(wea)
+        }
+        whatEver();
+
+        //Para convertir esa funcion en una IIFE debemos envolver toda la funcion en parentesis
+        (function() {
+            var wea = 'Otra wea cualquiera'
+            console.log(wea);
+            // Posteriormente usamos () para ejecutar ña funcion jsuto después de ser definida
+        })();
+        // Como ya fue ejecutada y es anónima, no hay forma de que podamos volver a llamar la función de nuevo.
+
+        // También se pueden pasar argumentos a este tipo de funciones, de la misma forma que lo hacemos con las funciones normales.
+        (function(whosThis){
+            var piñera = 'Weon'
+            console.log(piñera + ' ' + whosThis);
+        })('culeao')
+
+    </script>
+</body>
+</html>
