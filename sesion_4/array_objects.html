@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sesion 4</title>
+    <script>
+        // Arreglo
+        var num = [2, 4, 6, 7, 9, 3].map(timeTwo => timeTwo * 2);   
+        console.log(num)
+        
+        // Reto 1
+        function calculateAverage(numbers){
+            return numbers.reduce((acomulator, sumValue) => acomulator + sumValue / numbers.length, 0); 
+        }
+            var list = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+            var result = calculateAverage(list);
+            console.log(result)
+
+        // Objects
+        
+        // Convertir un objeto en un arreglo
+        var cellphone = {
+            band: 'Nexus',
+            model: 'Z520',
+            yer: 2018
+        }
+        // Para resolver este ejercicio haremos uso del método Object.keys() el cual retorna un arreglo con el nombre de las propiedades de un objeto.
+        console.log(Object.keys(cellphone));
+
+        // Después usaremos un ciclo para ir recorriendo todas las propiedades del objeto e ir obteniendo sus respectivos valores.
+        function convertToArray(cellphone) {
+            var incomplit = Object.keys(cellphone);
+            var complit = [];
+
+            for(var i = 0; i < incomplit.length; i++) {
+                complit.push( [incomplit[i], cellphone[incomplit[i]]])
+            }
+            return complit;
+        }
+        console.log(convertToArray(cellphone))
+
+        // Reto 2
+        // Converir un arreglo en un objeto
+        var girlfriend = [['name', 'Rei'], ['hair color', 'Blue'], ['feelings', 'None']]
+
+        function convertToObject(girlfriend) {
+            var resultObject = {};
+
+            for(var i = 0; i < girlfriend.length; i++) {
+                resultObject[girlfriend[i][0]] = girlfriend[i][1]
+            }
+            return resultObject;
+        }
+        console.log(convertToObject(girlfriend))
+
+        // Object and Methods
+        
+        // Ya mencionamos que las propiedades de los objetos pueden contener cualquier tipo de dato, esto incluye expresiones de funciones, en cuyo caso deja de llamarse propiedad y se conoce como método.
+        // V.g:
+        var person = {
+            name: 'Brad',
+            lastName: 'Cooper',
+            birthYear: 1990,
+            calcAge: function(birthYear) {
+                var today = new Date();
+                var year = today.getFullYear();
+
+                return year - birthYear;
+            }
+        }
+        console.log(person.calcAge(1990));
+
+        // La variable today es un objeto de la clase Date() de JavaScript. A su vez vemos que este objeto tiene un método getFullYear() el cual nos regresa el año.
+        var today = new Date();
+                var year = today.getFullYear();
+
+                this.age = year - this.birthYear;
+        // El keyword this hace referencia al mismo objeto, por lo que cuando decimos this.birthYear es como decir john.birthYear. Lo usamos cuando queremos hacer referencia a una propiedad o método del mismo objeto, e incluso para asignar nuevas propiedades.
+        // Ahora el método calculateAge en lugar de retornar la edad la va a guardar en una nueva propiedad llamada age.
+
+        // Reto 3
+
+        var singers = [
+        { name: 'Steven Tyler', band: 'Aerosmith', born: 1948 },
+        { name: 'Karen Carpenter', band: 'The Carpenters', born: 1950 },
+        { name: 'Kurt Cobain', band: 'Nirvana', born: 1967 },
+        { name: 'Chris Cornell', band: 'Soundgarden', born: 1964 },
+        ];
+
+        function pluck(list, propertyName) {
+            var result = [];
+            for(i = 0; i < list.length; i++) {
+                result.push(list[i][propertyName]);
+            }
+            return result;
+        }
+        console.log( pluck(singers, 'name') );
+        // ["Steven Tyler", "Karen Carpenter", "Kurt Cobain", "Chris Cornell"]
+
+        console.log( pluck(singers, 'band') );
+        // ["Aerosmith", "The Carpenters", "Nirvana", "Soundgarden"]
+
+        console.log( pluck(singers, 'born') );
+        // [1948, 1950, 1967, 1964]
+    </script>
+</head>
+<body>
+    <h1>Arrays and Objects</h1>
+</body>
+</html>
