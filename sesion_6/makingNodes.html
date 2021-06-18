@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nodes</title>
+</head>
+<body>
+    <blockquote id="quote">
+        Be yourself, express yourself, have faith in yourself.
+    </blockquote>
+    <h1>Making Nodes</h1>
+
+    <script>
+        function createNode(type, child) {
+            let node = document.createElement(type)
+            if(typeof child === 'string') {
+                let text = document.createTextNode(child)
+                node.appendChild(text)
+            } else {
+                node.appendChild(child)
+            }
+            return node;
+        }
+
+        // Si child tiene otra child adnetro
+        console.log(createNode('p', createNode('b', 'Bruce Lee')))
+        // Si child es un string
+        console.log(createNode('h2', 'This is a new text'))
+
+        // Primera forma de mandar esto a la pantalla
+        let newChild = createNode('p', createNode('b', '- Bruce Lee'))
+            
+        document.getElementById('quote').appendChild(newChild)
+        
+        // Segund forma de mandar esto a la pantalla 
+        document.getElementById('quote')
+        .appendChild(
+                createNode('p', createNode('b', 'Hell word'))   
+            )
+    </script>
+</body>
+</html>

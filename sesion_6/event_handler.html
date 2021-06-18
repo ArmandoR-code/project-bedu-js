@@ -1,0 +1,99 @@
+<!-- <p>No handler here.</p>
+
+<button>Click me</button>
+
+<p>No handler here.</p>
+
+<script>
+  var button = document.querySelector("button");
+  button.addEventListener("click", () => {
+    console.log("Button clicked.");
+  });
+</script> -->
+
+<!------------------------------------------------------------------->
+
+<!-- <button>Click me</button>
+
+<script>
+  var button = document.querySelector("button");
+  
+  function once() {
+    console.log("Click once");
+    button.removeEventListener("click", once);
+  }
+ 
+ button.addEventListener("click", once);
+</script> -->
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<!-- <html>
+  <head>
+    <title>Ejemplo 1: Eventos en nodos del DOM</title>
+  </head>
+  
+  <body>
+    <h1 style="color: white;" id="title">Hello World</h1>
+    
+    <button id="red">Red</button>
+    <button id="blue">Blue</button>
+    <button id="black">Black</button>
+    
+    <script>
+      let title = document.getElementById('title')
+
+      let red = document.getElementById('red')
+      let blue = document.getElementById('blue')
+      let black = document.getElementById('black')
+
+      red.addEventListener('click', () => title.style = 'color: red')
+      blue.addEventListener('click', () => title.style = 'color: blue')
+      black.addEventListener('click', () => title.style = 'color: black')
+    </script>
+  </body>
+</html> -->
+
+<!-- --------------------------------------------------------------------------------- -->
+
+<!-- <button>Click here</button>
+
+<script>
+    let button = document.querySelector('button')
+
+    button.addEventListener('mousedown', function(event) { 
+        if(event.button === 0) {
+            console.log('left button')
+        
+        } else if (event.button === 1) {
+            console.log('center button')
+        
+        } else if (event.button === 2) { 
+            console.log('right button')
+    }
+})
+</script> -->
+
+<!-- --------------------------------------------------------------------------------- -->
+
+ <html>
+  <head>
+    <title>Ejemplo 2: Usando event object</title>
+  </head>
+  
+  <body>
+    <h1 id="title">Hello World!</h1>
+    <input type="text" id="text" />
+    
+    <script>
+      let title = document.getElementById('title')
+      let input = document.getElementById('text')
+
+      input.addEventListener('input', (event) => {
+          title.textContent = event.target.value
+      })
+    </script>
+  </body>
+</html> 
+
+
