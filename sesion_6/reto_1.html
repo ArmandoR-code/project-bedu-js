@@ -1,14 +1,15 @@
 <html>
   <head>
     <meta charset="utf8" />
-    <title>Reto 1: Inflar un globo</title>
+    <title>Reto 1</title>
+    <style>body{background-color: darkturquoise; text-align: center; margin-top: 23rem;}</style>
   </head>
   
   <body>
     <p>🎈</p>
    
    <script>
-      let ballon = document.querySelector('p')
+      let ballon = document.querySelector('p');
       let size;
 
       setSize = (newSize) => {
@@ -16,11 +17,11 @@
           ballon.style.fontSize = size + 'px';
       }
       
-      setSize(20)
+      setSize(20);
 
       const handleArrow = (event) => {
           if(event.key === 'ArrowUp') {
-              if(size > 200) {
+              if(size > 250) {
                   ballon.textContent = '💥'
                   document.body.removeEventListener('keydown', handleArrow) 
               } else {

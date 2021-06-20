@@ -1,6 +1,8 @@
 <html>
   <head>
-    <title>Ejemplo 3: Key events</title>
+    <title>Ejemplo 3</title>
+    <style>body{background-color: black; color: white; border: 5px dotted whitesmoke; padding: 2rem; margin: 5rem;} h2{text-align: center; margin-top: 10rem; font-size: 2rem;  }</style>
+
   </head>
   
   <body>
@@ -8,19 +10,32 @@
     <h2>Press Ctrl + Enter to turn this page orange.</h2>
     
     <script>
-      window.addEventListener('keydown', (/*event*/)=> {
+      window.addEventListener('keydown', (event)=> {
           if(event.key === 'Enter') {
-              document.body.style.background = 'lightblue'
+              document.body.style.background = 'lightblue';
+              document.body.style.color = 'black';
+              document.body.style.borderColor = 'black'
           }
-
           if(event.key === 'Enter' && event.ctrlKey) {
-              document.body.style.background = 'orange'
+              document.body.style.background = 'orange';
+              document.body.style.color = 'black';
+              document.body.style.borderColor = 'black'
           }
       })
-
       window.addEventListener('keyup', () => {
-          document.body.style = 'backgound: white'
+          document.body.style.background = ''
+          document.body.style.color = '';
+          document.body.style.borderColor = ''
       })
+
+      /* window.addEventListener('keyup', () => {
+        if(event.key === 'Enter'){
+          document.body.style.background = ''
+          document.body.style.color = 'white';
+          document.body.style.borderColor = 'white'
+        }
+      }) */
+
     </script>
   </body>
 </html>
